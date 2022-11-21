@@ -1,9 +1,11 @@
+package prog_1;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class RakBuah-BelajarLoopFungsi {
+public class BelajarLoopFungsi {
     
     
     static ArrayList listbuah = new ArrayList();
@@ -18,7 +20,8 @@ public class RakBuah-BelajarLoopFungsi {
         System.out.println("[2] Tambah Buah");
         System.out.println("[3] Ganti Buah");
         System.out.println("[4] Hapus Buah");
-        System.out.println("[5] Exit");
+        System.out.println("[5]Hapus Seluruh Buah");
+        System.out.println("[6] Exit");
         System.out.print("Pilih Menu> ");
 
         int selectMenu = Integer.valueOf(input.readLine());
@@ -36,7 +39,11 @@ public class RakBuah-BelajarLoopFungsi {
             case 4:
                 deletBuah();
                 break;
+                
             case 5:
+                listbuah.clear();
+                break;
+            case 6:
                 System.exit(0);
                 break;
         }
@@ -54,9 +61,20 @@ public class RakBuah-BelajarLoopFungsi {
     }
     
     static void insertBuah() throws IOException{
+        Boolean ulang = true;
+        while(ulang){
         System.out.print("Masukkan Nama Buah: ");
         String namaBuah = input.readLine();
         listbuah.add(namaBuah);
+        System.out.print("Apakah kamu ingin memanambah lagi? (YA/TIDAK) : ");
+        String k = input.readLine();
+           if(k.equalsIgnoreCase("ya")){
+               ulang = true;
+           }else if(k.equalsIgnoreCase("Tidak")){
+               ulang = false;
+           }
+       }
+       
     }
     
     static void editBuah() throws IOException{

@@ -55,13 +55,13 @@ public class BelajarLoopFungsi {
         }else{
             //tampilkan seluruh buah
             for (int i = 0; i < listbuah.size(); i++) {
-                System.out.println(String.format("[%d]%s", i, listbuah.get(i)));
+                System.out.println(String.format("[%d]%s", i+1, listbuah.get(i)));
             }
         }
     }
     
     static void insertBuah() throws IOException{
-        Boolean ulang = true;
+        boolean ulang = true;
         while(ulang){
         System.out.print("Masukkan Nama Buah: ");
         String namaBuah = input.readLine();
@@ -82,7 +82,7 @@ public class BelajarLoopFungsi {
         
         //pilih buah yang diganti
         System.out.print("Pilih nomor buah yang akan diganti: ");
-        int indexBuah = Integer.valueOf(input.readLine());
+        int indexBuah = Integer.valueOf(input.readLine()) - 1;
         
         //masukkan nama buah yang baru
         System.out.print("Masukkan Nama Baru: ");
@@ -95,7 +95,7 @@ public class BelajarLoopFungsi {
     static void deletBuah() throws IOException{
         showAllBuah();
         System.out.print("Pilih nomor buah yang akan dihapus: ");
-        int nomorDelet = Integer.valueOf(input.readLine());
+        int nomorDelet = Integer.valueOf(input.readLine())-1;
         listbuah.remove(nomorDelet);
     }
     
